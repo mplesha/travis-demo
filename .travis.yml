@@ -20,8 +20,8 @@ jobs:
       - mkdir dist && cp index.html ./dist && ls
       name: job3
     - stage: deploy
+      script: skip
       deploy:
-        script: skip
         provider: pages
         github_token: $TRAVIS_GH_TOKEN
         local_dir: ./dist/
