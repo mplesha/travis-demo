@@ -17,12 +17,13 @@ jobs:
       name: job2
     -
       script:
-      - mkdir dist && cp index.html ./dist
+      - mkdir dist && cp index.html ./dist && ls
       name: job3
 
 deploy:
   provider: pages
   github_token: $TRAVIS_GH_TOKEN
+  script: ls
   local_dir: ./dist
   on:
     branch: master
