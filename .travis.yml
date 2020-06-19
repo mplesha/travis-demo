@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "10"
+
+dist: trusty
+sudo: false
+
+jobs:
+  include:
+    - stage: Stage1
+      script:
+      - echo 'Hello job1'
+      name: job1
+    -
+      script:
+      - echo 'Hello job2'
+      name: job2
+    -
+      script:
+      - mkdir dist && cp index.html ./dist
+      name: job3
+    - stage: deploy
+      script: skip
+      provider: pages
+      github_token: $TRAVIS_GH_TOKEN
+      local_dir: ./dist
+      on:
+        branch: master
