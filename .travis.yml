@@ -20,7 +20,7 @@ jobs:
       name: job2
     -
       script:
-      - [ -d dist ] || mkdir dist && cp index.html ./dist && ls
+      - mkdir dist && cp index.html ./dist && ls
       name: job3
     - stage: deploy
       script: skip
