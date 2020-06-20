@@ -28,6 +28,6 @@ jobs:
       deploy:
         provider: pages
         github_token: $TRAVIS_GH_TOKEN
-        local_dir: ./
+        local_dir: ./dist
         on:
           branch: master
