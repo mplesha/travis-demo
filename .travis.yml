@@ -27,6 +27,7 @@ jobs:
       script: ls -la ./dist
       deploy:
         provider: pages
+        skip_cleanup: true
         github_token: $TRAVIS_GH_TOKEN
         local_dir: ./dist
         on:
