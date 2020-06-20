@@ -24,7 +24,7 @@ jobs:
       name: job3
     - stage: deploy
       script: skip
-      script: ls -la
+      script: ls -la ./dist
       deploy:
         provider: pages
         github_token: $TRAVIS_GH_TOKEN
